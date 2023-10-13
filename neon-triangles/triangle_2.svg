@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="IconChangeColor" height="300" width="300" transform="rotate(0)">
+    <rect width="256" height="256" fill="none">
+    </rect>
+    <linearGradient id="gradient" gradientTransform="rotate(90)">
+      <stop offset="0%"  stop-color="#fd8b35" />
+      <stop offset="100%" stop-color="#ae2776" />
+    </linearGradient>
+    <path d="M114.2,40l-88,152A16,16,0,0,0,40,216H216a16,16,0,0,0,13.8-24l-88-152A15.9,15.9,0,0,0,114.2,40Z" 
+        stroke="#ff0000" 
+        stroke-linecap="round" stroke-linejoin="round" stroke-width="7" 
+        id="mainIconPathAttribute" data-darkreader-inline-stroke="" 
+        style="--darkreader-inline-stroke: #e8e6e3;">
+    </path>
+</svg>

@@ -1,0 +1,99 @@
+:root {
+    --h: 0;
+    --s: 0;
+    --l: 20;
+    --color: hsl(var(--h), calc(var(--s) * 1%), calc(var(--l) * 1%));
+    --angle: 90;
+    --shape-round: 50%;
+    --shape-blop: 50% 50% 0% 50% / 50% 50% 0% 50%;
+    --time: 1.7s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: hsl(0, 0%, 10%); */
+}
+
+#main {
+    border: 7px solid var(--color);
+    border-radius: 50%;
+    /* padding: 4rem; */
+    box-shadow: 4px 4px 16px 1px hsl(var(--h), calc(var(--s) * .1%), calc(var(--l) * 2%));
+}
+
+#animation-container {
+    width: 400px;
+    aspect-ratio: 1;
+    /* border: 5px solid var(--color); */
+    position: relative;
+    animation: bloom ease-in-out var(--time) infinite alternate-reverse;
+}
+
+.child-1,
+.child-2,
+.child-3,
+.child-4 {
+    position: absolute;
+    background-color: var(--color);
+    width: 100px;
+    height: 100px;
+    border-radius: 50% 50% 0% 50% / 50% 50% 0% 50%;
+
+    animation: ball-to-blop ease-in-out var(--time) infinite alternate-reverse;
+}
+
+.child-1 {
+    top: 0;
+    left: 0;
+    rotate: calc(var(--angle) * 0deg);
+}
+.child-2 {
+    top: 0;
+    right: 0;
+    rotate: calc(var(--angle) * 1deg);
+}
+.child-3 {
+    bottom: 0;
+    left: 0;
+    rotate: calc(var(--angle) * 3deg);
+}
+.child-4 {
+    bottom: 0;
+    right: 0;
+    rotate: calc(var(--angle) * 2deg);
+}
+
+@keyframes bloom {
+    from {
+        width: 250px;
+        rotate: 0deg;
+        margin: 3rem;
+    }
+    to {
+        width: 100px;
+        rotate: 360deg;
+        margin: 0.1rem;
+    }
+}
+
+@keyframes ball-to-blop {
+    0% {
+        border-radius: var(--shape-blop);
+    }
+    40% {
+        border-radius: var(--shape-blop);
+    }
+    100% {
+        border-radius: var(--shape-round);
+    }
+}
