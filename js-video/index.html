@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Video</title>
+</head>
+
+<body>
+    <canvas id="videoCanvas" width="1280" height="720"></canvas>
+    <button id="startRecording">Start Recording</button>
+    <button id="stopRecording">Stop Recording</button>
+    <video id="resultVideo" controls></video>
+
+    <input type="file" id="fileInput" />
+    <textarea id="base64Output" rows="10" cols="50" readonly></textarea>
+
+    <input type="file" id="fileInput2" />
+    <img id="imagePreview" alt="Image Preview" style="display:none;" />
+    <a id="downloadLink" style="display:none;" download="file">Download File</a>
+
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('fileInput2').addEventListener('change', handleFileSelect);
+        
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                // Create an object URL for the selected file
+                const objectURL = URL.createObjectURL(file);
+
+                // Display the image preview if the file is an image
+                const imagePreview = document.getElementById('imagePreview');
+                if (file.type.startsWith('image/')) {
+                    imagePreview.src = objectURL;
+                    imagePreview.style.display = 'block';
+                } else {
+                    imagePreview.style.display = 'none';
+                }
+
+                // Set up the download link
+                const downloadLink = document.getElementById('downloadLink');
+                downloadLink.href = objectURL;
+                downloadLink.download = file.name;
+                downloadLink.style.display = 'block';
+                downloadLink.textContent = 'Download ' + file.name;
+            }
+        }
+    </script>
+</body>
+
+</html>

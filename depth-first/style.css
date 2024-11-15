@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: none;
+}
+
+body {
+  width: 100%;
+  /* min-height: 100dvh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: conic-; */
+  background-image: black;
+  padding: 0.27rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #ffffff;
+    color: hsl(0, 0%, 90%);
+  }
+}
+
+#maze {
+  /* background: linear-gradient(to right, black, rgb(2, 63, 63), black); */
+  background-color: rgba(132, 132, 132, 0) !important;
+  border: 3px black solid;
+  scale: 0.7;
+}

@@ -9,7 +9,9 @@
 > Can't Load video files here, gifs are too large 
 
 
+
 1. ![particals](./showcase/particals.jpg "particals.jpg")
+1. ![particals](./showcase/backtrack-maze.png "backtrack-maze.png")
 1. ![synthwave](./showcase/synthwave.jpg "synthwave.jpg")
 1. ![galaxy](./showcase/galaxy.jpg "galaxy.jpg")
 1. ![yt-subscribr-btn-animation](./showcase/yt-subscribr-btn-animation.png "yt-subscribr-btn-animation.png")
@@ -18,4 +20,3 @@
 1. ![room-3d](./showcase/room-3d.jpg "room-3d.jpg")
 1. ![box-rotate](./showcase/box-rotate.jpg "box-rotate.jpg")
 1. ![galaxy-loading](./showcase/galaxy-loading.jpg "galaxy-loading.jpg")
-1. ![glowing-loading](./showcase/glowing-loading.jpg "glowing-loading.jpg")
