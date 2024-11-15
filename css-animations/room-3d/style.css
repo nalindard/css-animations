@@ -1,0 +1,213 @@
+:root {
+    --bg: #0ff7;
+    --bg: #000000;
+    --floor-width: 400;
+    --floor-height: calc(var(--floor-width) / 2);
+    --wall-height: 200;
+    --wall-width: 20;
+    --floor: repeating-conic-gradient(
+        from 45deg,
+        black 0deg 90deg,
+        silver 90deg 180deg
+    );
+    --floor-2: repeating-conic-gradient(
+        from 45deg,
+        white 0deg 90deg,
+        silver 90deg 180deg
+    );
+    --floor-3: repeating-conic-gradient(
+        from 45deg,
+        grey 0deg 90deg,
+        silver 90deg 180deg
+    );
+    --floor-size: 1em 1em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-pattern {
+    background: var(--floor);
+    background-size: var(--floor-size);
+}
+.bg-pattern-2 {
+    background: var(--floor-2);
+    background-size: var(--floor-size);
+}
+.bg-pattern-3 {
+    background: var(--floor-3);
+    background-size: var(--floor-size);
+}
+
+.room-element {
+    position: absolute;
+}
+
+.h {
+    visibility: hidden;
+    visibility: visible;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg);
+
+    background: radial-gradient(rgb(20, 35, 36), rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+._3D{
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(60deg) rotateZ(-45deg) rotateY(-12deg);
+    transform: perspective(1000px) rotateX(70deg) rotateZ(45deg) rotateY(-1deg);
+
+    transform: perspective(1000px) rotateX(70deg) rotateZ(47deg) rotateY(-1deg);
+    /* transform: perspective(1000px) rotateX(89deg) rotateZ(-40deg) rotateY(-1deg); */
+}
+
+.floor {
+    width: calc(var(--floor-width) * 1px);
+    height: calc(var(--floor-height) * 1px);
+
+    position: relative;
+
+    /* transform-style: preserve-3d; */
+    /* transform: perspective(1000px) rotateX(60deg) rotateZ(-45deg) rotateY(-12deg); */
+    /* transform: perspective(1000px) rotateX(70deg) rotateZ(45deg) rotateY(-1deg); */
+    
+    transform: perspective(1000px) rotateX(70deg) rotateZ(0deg) rotateY(0deg);
+
+    animation: 4s rotate linear infinite alternate;
+
+    background: radial-gradient(rgba(0, 161, 179, 0.119), rgba(0, 5, 5, 0.952)), url('https://media.istockphoto.com/id/1192122238/photo/herringbone-pattern-surface-classic-style-stone-paving-seamless-texture-map.webp?b=1&s=170667a&w=0&k=20&c=ykGA0Up-s3Dd4kMbh3Vdvc_nUgfsYXsPt7-5gL0mmkc=');
+}
+
+.floor-front {
+    width: calc(var(--floor-width) * 1px);
+    /* width: calc(var(--floor-width)*1px); */
+    height: calc(var(--wall-width) * 1px);
+
+    right: 0;
+    bottom: 0;
+
+    background:linear-gradient(rgba(0, 16, 19, 0.83), rgba(0, 52, 62, 0.399)), url('https://media.istockphoto.com/id/1192122238/photo/herringbone-pattern-surface-classic-style-stone-paving-seamless-texture-map.webp?b=1&s=170667a&w=0&k=20&c=ykGA0Up-s3Dd4kMbh3Vdvc_nUgfsYXsPt7-5gL0mmkc=');
+}
+.floor-right {
+    width: calc(var(--wall-width) * 1px);
+    height: calc(var(--floor-height) * 1px);
+
+    right: 0;
+    bottom: 0;
+
+    background:linear-gradient( to right, rgba(2, 14, 18, 0.899), rgba(0, 51, 67, 0.318)), url('https://media.istockphoto.com/id/1192122238/photo/herringbone-pattern-surface-classic-style-stone-paving-seamless-texture-map.webp?b=1&s=170667a&w=0&k=20&c=ykGA0Up-s3Dd4kMbh3Vdvc_nUgfsYXsPt7-5gL0mmkc=');
+}
+
+.wall-back {
+    width: calc(var(--floor-width) * 1px);
+    /* height: calc((var(--floor-height) - var(--wall-width)) *1px); */
+    height: calc(var(--wall-height) * 1px);
+
+    right: 0;
+    top: 0;
+
+    background: radial-gradient(at bottom,rgba(0, 154, 168, 0.582), rgb(0, 0, 0)), url('https://media.istockphoto.com/id/1419117748/photo/old-wall-texture-cement-dirty-gray-with-black-background-abstract-grey-and-silver-color.webp?b=1&s=170667a&w=0&k=20&c=KI-m7WiMl2YDY5nSyAxxsta5ZPwjY1x6WwSCRdZq-VA=');
+}
+
+.wall-back-top {
+    width: calc(var(--floor-width) * 1px);
+    height: calc(var(--wall-width) * 1px);
+
+    top: 0;
+    right: 0;
+
+    background: linear-gradient(rgba(0, 128, 128, 0.275), rgba(0, 128, 148, 0.314)), url('https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnJpY2t8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
+    background-size: cover;
+    background-position: right;
+}
+
+.wall-left {
+    width: calc(var(--floor-height) * 1px);
+    height: calc(var(--floor-height) * 1px);
+
+    bottom: 0;
+    /* left: calc(var(--wall-width)*1px); */
+    left: 0;
+
+    background: radial-gradient(at right,rgba(0, 154, 168, 0.582), rgb(0, 0, 0)), url('https://media.istockphoto.com/id/1419117748/photo/old-wall-texture-cement-dirty-gray-with-black-background-abstract-grey-and-silver-color.webp?b=1&s=170667a&w=0&k=20&c=KI-m7WiMl2YDY5nSyAxxsta5ZPwjY1x6WwSCRdZq-VA=');
+
+}
+
+.wall-left-top {
+    width: calc(var(--wall-width) * 1px);
+    height: calc(var(--floor-height) * 1px);
+
+    background: linear-gradient(rgba(0, 57, 54, 0.275), rgba(0, 84, 90, 0.314)), url('https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnJpY2t8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.wall-left-front {
+    width: calc(var(--wall-width) * 1px);
+    height: calc(var(--floor-height) * 1px);
+
+    background: linear-gradient(rgba(0, 114, 127, 0.275), rgba(0, 69, 73, 0.416)), url('https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YnJpY2t8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ---------------------- Make it 3D---------------------- */
+
+.floor-front {
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+}
+.floor-right {
+    transform-origin: right;
+    transform: rotateY(270deg);
+}
+
+.wall-back {
+    transform-origin: top;
+    transform: perspective(999999px) rotateX(90deg);
+}
+
+.wall-back-top {
+    transform-origin: top;
+    transform: perspective(999999px) rotateX(180deg)
+        translateZ(calc(var(--wall-height) * -1px));
+}
+
+.wall-left {
+    transform-origin: left;
+    transform: rotateY(270deg);
+}
+
+.wall-left-top {
+    transform-origin: left;
+    /* transform: translateZ(calc(var(--wall-height)*1px)); */
+    transform: rotateY(180deg) translateZ(calc(var(--wall-height) * -1px));
+}
+
+.wall-left-front {
+    transform-origin: bottom left;
+    /* transform: rotateX(270deg); */
+    transform: rotateX(270deg) rotateY(180deg);
+}
+
+
+/* @keyframes rotate {
+    from{transform: perspective(1000px) rotateX(50deg) rotateZ(0deg) rotateY(-20deg);}
+    to{transform: perspective(1000px) rotateX(180deg) rotateZ(360deg) rotateY(20deg);}
+} */
+@keyframes rotate {
+    from{transform: perspective(1000px) rotateX(80deg) rotateZ(92deg) rotateY(0deg);}
+    to{transform: perspective(1000px) rotateX(50deg) rotateZ(-27deg) rotateY(0deg);}
+}

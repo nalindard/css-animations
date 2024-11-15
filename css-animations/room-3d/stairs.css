@@ -1,0 +1,76 @@
+.s {
+    background-color: rgb(143, 0, 0);
+}
+
+.wall-stair-floor {
+    --top: 0;
+    --left: 0;
+    --st-num: 1;
+    --width: calc(var(--floor-width) / 6 * 1px);
+    --height: calc(var(--floor-height) / 3.2 * 1px);
+    --gap: calc(var(--wall-height) / 7 * 1px);
+
+    width: var(--width);
+    height: var(--height);
+
+    top: calc(var(--top) * var(--height));
+    left: calc(var(--left) * var(--width));
+
+    /* border-right: 12px solid green; */
+
+    /* transform: translateZ(50px); */
+    transform: translateZ(calc(var(--gap) * var(--st-num)));
+
+    background: radial-gradient(rgba(0, 187, 187, 0.275), rgba(0, 49, 44, 0.801)), url('https://media.istockphoto.com/id/1160715616/photo/exposed-aggregate-or-granite-pavers-seamless.webp?b=1&s=170667a&w=0&k=20&c=xdg4CU8BhIpjMM9bUQNgcBNdbKcfufyd4WKR0vcKZmk=');
+    background-size: cover;
+    background-position: lefr;
+}
+
+.wall-stair-front {
+    --top: 0;
+    --left: 0;
+    --st-num: 1;
+    --width: calc(var(--floor-width) / 6 * 1px);
+    --height: calc(var(--floor-height) / 3.2 * 1px);
+    --gap: calc(var(--wall-height) / 7 * 1px);
+
+    width: var(--width);
+    /* height: calc(var(--height)/2); */
+    height: 28px;
+
+    top: calc(var(--top) * var(--height));
+    left: calc(var(--left) * var(--width));
+
+    background-color: rgb(71, 15, 15);
+
+    transform-origin: top;
+    transform: translateZ(calc(var(--gap) * var(--st-num))) rotateX(270deg);
+
+    background: linear-gradient(to bottom, rgba(0, 88, 88, 0.449), rgba(0, 14, 22, 0.91)), url('https://images.unsplash.com/photo-1611572705535-e4d6cd9a12cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGdsYXNzJTIwdGV4dHVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.wall-stair-right {
+    --top: 0;
+    --left: 0;
+    --st-num: 1;
+    --width: calc(var(--floor-width) / 6 * 1px);
+    --height: calc(var(--floor-height) / 3.2 * 1px);
+    --gap: calc(var(--wall-height) / 7 * 1px);
+    
+    width: var(--width);
+    height: 28px;
+    
+    top: calc(var(--top) * var(--height));
+    left: calc(var(--left) * var(--width));
+    
+    background-color: rgb(39, 0, 0);
+    transform-origin: top left;
+    /* transform: translateZ(calc(var(--gap) * var(--st-num))) rotateZ(270deg) rotateX(270deg); */
+    transform: translateZ(calc(var(--gap) * var(--st-num))) rotateZ(270deg) rotateX(270deg);
+
+    background: linear-gradient(to bottom, rgba(0, 88, 88, 0.449), rgba(0, 14, 22, 0.92)), url('https://plus.unsplash.com/premium_photo-1675725088473-ea045a9e2e3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGlsZSUyMHRleHR1cmV8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+}

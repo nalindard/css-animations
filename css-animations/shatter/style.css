@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #966b2a;
+    color: #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(orange, rgb(164, 79, 0));
+}
+
+#canvas {
+    position: relative;
+    min-width: 400px;
+    width: 400px;
+    min-height: 400px;
+    height: 400px;
+    /* background-color: #454545; */
+    transform-style: preserve-3d;
+    perspective: 100px;
+    /* box-shadow: 10px 10px 40px rgb(219, 141, 6); */
+    /* border: 2px solid rgba(255, 166, 0, 0.19); */
+}
+
+.img-peace {
+    /* scale: .99; */
+    --s: .7;
+    animation: shatter 5s cubic-bezier(0, 0.6, 0, 0.99) alternate infinite;
+    perspective: 10px;
+    border: none;
+    /* transform: perspective(1000px); */
+}
+
+@keyframes shatter {
+    from {
+        scale: var(--s);
+        rotate: calc(var(--r) * 1deg);
+        translate: calc(var(--x)*1px) calc(var(--y)*1px) calc(var(--z)*1px);
+        /* transform: perspective(10px) translateZ(var()); */
+        filter: blur(calc(var(--b)*1px)) grayscale(calc(var(--g) * 1%)) opacity(calc(var(--g) * 1%)) sepia(calc(var(--g) * 1%)) invert(calc(var(--g) * 1%));
+        /* border: .5px dashed rgba(255, 157, 0, 0.5); */
+        box-shadow: 40px 40px 40px black;
+    }
+}

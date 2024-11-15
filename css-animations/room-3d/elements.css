@@ -1,0 +1,140 @@
+.light {
+    --glow: hsl(180, 100%, 50%);
+    width: 50px;
+    aspect-ratio: 1;
+    background-color: var(--glow);
+    box-shadow: 0 0 5px var(--glow), 0 0 25px var(--glow), 0 0 50px var(--glow),
+        0 0 100px var(--glow);
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translateY(-50%) translateX(-50%) translateZ(calc((var(--wall-height) * 1px) + 72px)) rotateX(90deg);
+
+    animation: 4s rotate-l linear alternate infinite;
+
+    background: radial-gradient(rgb(244, 254, 255), rgb(100, 255, 255));
+}
+
+/* @keyframes rotate-l {
+    from{transform: perspective(1000px) rotateX(60deg) rotateZ(92deg) rotateY(-4deg);}
+    to{transform: perspective(1000px) rotateX(77deg) rotateZ(-27deg) rotateY(4deg);}
+} */
+@keyframes rotate-l {
+    from{transform: translateY(-50%) translateX(-50%) translateZ(calc((var(--wall-height) * 1px) + 72px)) rotateX(80deg) rotateY(92deg);} 
+    to{transform: translateY(-50%) translateX(-50%) translateZ(calc((var(--wall-height) * 1px) + 72px)) rotateX(110deg) rotateY(184deg);}
+}
+
+
+.t-floor {
+    width: calc(var(--floor-width) * 0.2px);
+    height: calc(var(--floor-height) * 0.6px);
+    /* height: 100px; */
+    background-color: rgb(172, 0, 0);
+    
+    bottom: calc(var(--floor-width) * 0.05px);
+
+    transform: translateZ(calc((var(--wall-height) * .27px)));
+
+    background: linear-gradient(to left, rgba(0, 195, 195, 0.374), rgba(0, 43, 48, 0.845)), url('https://media.istockphoto.com/id/637715972/photo/natural-water-drops-on-glass-winter-condensation.webp?b=1&s=170667a&w=0&k=20&c=CFwO_H7PjGxLHrZrGyADx4P3onbw3i31d7VJqKD1-rA=');
+    background-size: cover;
+    background-position: center;
+}
+
+.t-feet-left-l, 
+.t-feet-right-l {
+    width: calc(var(--floor-width) * 0.2px);
+    /* height: calc(var(--floor-height) * 0.17px); */
+    height: calc((var(--wall-height) * .27px));
+    /* height: 70px; */
+
+    background-color: rgb(56, 0, 0);
+
+    bottom: calc(var(--floor-width) * 0.05px);
+    /* left: 100px; */
+
+    transform-origin: bottom;
+    transform: rotateX(90deg) translateY(100%);
+
+    background: linear-gradient(rgb(0, 8, 10), rgba(0, 52, 59, 0.342)), url('https://images.unsplash.com/photo-1599992836360-f88e279f8350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHdvb2QlMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80');
+    background-position: top;
+    background-size: cover;
+}
+
+.t-feet-left-s, 
+.t-feet-right-s {
+    width: calc(var(--floor-width) * 0.2px);
+    width: calc((var(--wall-height) * .27px));
+    height: calc((var(--wall-height) * .27px));
+    height: calc(var(--floor-width) * 0.05px);
+    
+    background-color: rgb(112, 0, 0);
+    
+    left: calc(var(--floor-width) * 0.2px);
+    bottom: calc(var(--floor-width) * 0.05px);
+
+    transform-origin: left;
+    transform: rotateY(270deg) ;
+
+    background: linear-gradient( to right,rgb(0, 8, 10), rgba(0, 132, 150, 0.342)), url('https://images.unsplash.com/photo-1599992836360-f88e279f8350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHdvb2QlMjB0ZXh0dXJlfGVufDB8fDB8fHww&w=1000&q=80');
+    background-position: top;
+    background-size: cover;
+}
+
+.t-feet-right-l,
+.t-feet-right-s {
+    bottom: calc(var(--floor-height) * 0.6px);
+}
+/* t-floor */
+/* t-feet-left-l */
+/* t-feet-left-s */
+/* t-feet-right-l */
+/* t-feet-right-s */
+
+.ball{
+    width: 72px;
+    width: calc(var(--wall-height) / 7 * 1px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: greenyellow;
+
+    transform-origin: right;
+    transform: translateZ(calc((var(--wall-height) * 1px))) translateX(0%) rotateY(90deg) rotateX(90deg);
+
+    animation: bounce 4s infinite ease-in-out, dir 4s linear infinite;
+    /* animation: dir 2s linear; */
+    /* left: 100px; */
+    /* right: 0; */
+
+    background: radial-gradient(at left, rgb(0, 107, 128), rgb(0, 35, 50));
+}
+
+@keyframes bounce{
+    00.00%{transform: translateZ(calc((var(--wall-height) * 01.5px))) translateX(-100%) rotateY(92deg) rotateX(80deg); opacity: 0;}
+
+    07%{transform: translateZ(calc((var(--wall-height) * 01px))) translateX(20%) rotateY(90deg) rotateX(80deg); opacity: 1;}
+    15%{transform: translateZ(calc((var(--wall-height) * 1.142px))) translateX(100%) rotateY(90deg) rotateX(80deg); }
+
+    23%{transform: translateZ(calc((var(--wall-height) * 0.857px))) translateX(50%) rotateY(90deg) rotateX(80deg); }
+    30%{transform: translateZ(calc((var(--wall-height) * 1px))) translateX(100%) rotateY(90deg) rotateX(80deg); }
+
+    38%{transform: translateZ(calc((var(--wall-height) * 0.714px))) translateX(70%) rotateY(90deg) rotateX(80deg); }
+    46%{transform: translateZ(calc((var(--wall-height) * 0.857px))) translateX(100%) rotateY(90deg) rotateX(80deg); }
+
+    53%{transform: translateZ(calc((var(--wall-height) * 0.571px))) translateX(120%) rotateY(90deg) rotateX(80deg); }
+    61%{transform: translateZ(calc((var(--wall-height) * 0.714px))) translateX(120%) rotateY(90deg) rotateX(80deg); }
+
+    69%{transform: translateZ(calc((var(--wall-height) * 0.428px))) translateX(150%) rotateY(90deg) rotateX(80deg); }
+    76%{transform: translateZ(calc((var(--wall-height) * 0.571px))) translateX(150%) rotateY(90deg) rotateX(80deg); }
+
+    84%{transform: translateZ(calc((var(--wall-height) * 0.285px))) translateX(200%) rotateY(90deg) rotateX(80deg); }
+    92%{transform: translateZ(calc((var(--wall-height) * 0.428px))) translateX(200%) rotateY(90deg) rotateX(80deg); opacity: 1;}
+    95%{opacity: 0;}
+    100.00%{transform: translateZ(calc((var(--wall-height) * 0.5px))) translateX(200%) rotateY(90deg) rotateX(80deg); opacity: 0;}
+}
+
+@keyframes dir{
+    from{left: 0;}
+    to{left: calc(var(--floor-width) / 6 * 5px)}
+}
